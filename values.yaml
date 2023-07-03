@@ -1,23 +1,23 @@
 shiny:
   image:
-    repository: inseefrlab/shiny-app-template
-    tag: "1.0.1"
+    repository: anaeldelorme/rpg
+    tag: "1.2.2"
     pullPolicy: Always
   ingress:
     enabled: true
-    hostname: myshinyapp.lab.sspcloud.fr
+    hostname: rpg.lab.sspcloud.fr
   s3:
     enabled: true
-    existingSecret: myshinyapp-s3
+    existingSecret: rpg-s3
   postgresql:
     enabled: true
     auth:
-      username: myusername
+      username: funathon16
       database: defaultdb
-      existingSecret: myshinyapp-postgresql
+      existingSecret: rpg-postgresql
     containerPorts:
       postgresql: 5432
-    fullnameOverride: postgresql-db
+    fullnameOverride: postgresql-758156.projet-funathon
     primary:
       persistence:
         size: 2Gi
